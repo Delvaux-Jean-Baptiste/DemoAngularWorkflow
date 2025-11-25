@@ -1,0 +1,23 @@
+name: Build Angular App
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+  build-angular:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greetings
+        run: echo "Hello, world!"
+        
+      - name: Set up job
+        uses: actions/checkout@v6
+        
+      - name: Set up Node.JS
+        uses: actions/setup-node@v6
+        with: 
+            node-version: 22.21
+            
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Build
+        run: npm run build

@@ -1,7 +1,7 @@
 FROM nginx AS base
 
 
-FROM node AS build
+FROM node:22.21 AS build
 #installation d'Angular
 RUN npm install -g @angular/cli
 
@@ -25,4 +25,4 @@ WORKDIR /usr/share/nginx/html
 RUN rm *
 
 #Copie l'application dans le répertoire de NGINX
-COPY --from=build /src/dist/demoApp/browser/ .
+COPY --from=build /src/dist/DemoAngularWokflow/browser/ .
