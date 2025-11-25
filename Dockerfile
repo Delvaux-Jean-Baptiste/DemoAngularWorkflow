@@ -10,7 +10,7 @@ WORKDIR /src
 #Installation de git et récupération du repository
 RUN apt-get update
 RUN apt-get install -y git
-RUN git clone https://https://github.com/Delvaux-Jean-Baptiste/DemoAngularWorkflow.git .
+RUN git clone https://github.com/Delvaux-Jean-Baptiste/DemoAngularWorkflow.git .
 
 #Installation des node_modules
 RUN npm install
