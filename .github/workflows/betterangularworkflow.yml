@@ -1,9 +1,7 @@
 name: Build Angular and push to dockerhub
 run-name: ${{ github.actor }} is crying about dockerbuild
 on:
-  push:
-    branches:
-      - main
+  [workflow_dispatch]
 jobs:
   build-angular:
     runs-on: ubuntu-latest
