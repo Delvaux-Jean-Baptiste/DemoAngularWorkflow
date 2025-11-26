@@ -22,4 +22,5 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v6
         with:
-          tags: user/angulartest:latest
+          push: true
+          tags: ${{ vars.DOCKER_HUB_USERNAME }}/angulartest:latest
