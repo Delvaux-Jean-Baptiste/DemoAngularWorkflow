@@ -1,0 +1,23 @@
+name: Build Angular and push to dockerhub
+run-name: ${{ github.actor }} is crying about dockerbuild
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-angular:
+    runs-on: ubuntu-latest
+    container:
+      image: delvauxjb/angulartest:latest
+    steps:
+      - name: Greetings
+        run: echo "Hello, world!"
+        
+      - name: Set up job
+        uses: actions/checkout@v6
+        
+      - name: Build Docker image
+        run: docker build . --file Dockerfile --tag delvauxjb/angulartest:latest
+
+      - name: push image to dockerhub
+        run: docker push delvauxjb/angulartest:latest
